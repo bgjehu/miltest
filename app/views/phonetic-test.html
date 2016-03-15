@@ -1,11 +1,21 @@
 <div ng-hide="isFinished()">
-  <div class="jumbotron">
-    <h2>Number {{currentNumber + 1}}</h2>
-    <h2>{{phonetics[testNumbers[currentNumber]].char}}</h2>
-    <form>
-      <input type="text" placeholder="Enter phonetic word" ng-model="answer"/>
-      <input type="submit" ng-click="submit()"/>
-    </form>
+  <div class="testPanel panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Phonetic Test</h3>
+    </div>
+    <div class="panel-body">
+      <p ng-show="usedTime" class="pull-right"><span class="glyphicon glyphicon-time"></span>{{' ' + usedTime}}</p>
+      <div class="question-panel">
+        <h5>Question {{currentNumber + 1}}</h5>
+        <span class="phonetic-char">{{phonetics[testNumbers[currentNumber]].char}}</span>
+        <div class="question-form">
+          <form>
+            <input type="text" placeholder="Phonetic Word" ng-model="answer"/>
+            <span><button type="submit" class="btn btn-sm btn-default" ng-click="submit()">Enter</button></span>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
   <blockquote ng-hide="previous===null" ng-class="{success:previous.correctness,danger:!previous.correctness}">
     <h4>Previous</h4>
@@ -28,5 +38,6 @@
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-primary" ng-click="reset()">Re-test</button>
+  <span class="glyphicon glyphicon-time"></span>{{' ' + usedTime}}
+  <button class="btn btn-sm btn-default pull-right" ng-click="reset()">Re-test</button>
 </div>

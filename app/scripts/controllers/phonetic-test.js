@@ -8,7 +8,7 @@
  * Controller of the miltestApp
  */
 angular.module('miltestApp')
-  .controller('PhoneticTestCtrl', function ($scope, $http) {
+  .controller('PhoneticTestCtrl', function ($scope, $http, $moment, $filter, $timeout) {
 
     // Returns a random integer between min (included) and max (included)
     // Using Math.round() will give you a non-uniform distribution!
@@ -29,18 +29,32 @@ angular.module('miltestApp')
       return testNumbers;
     }
 
-    // function isAnswerCorrect(){
-    //   return $scope.answer.lowercase() === $scope.phonetics[$scope.testNumbers[$scope.currentNumber]].word.lowercase();
-    // }
+    function isAnswerCorrect(){
+      return $filter('uppercase')($scope.answer)===$filter('uppercase')($scope.phonetics[$scope.testNumbers[$scope.currentNumber]].word);
+    }
+    function tick(){
+      $scope.usedTime = getUsedTime();
+      $scope.countDown = $timeout(tick, $scope.tickInterval);
+    }
+    function getUsedTime(){
+      var timespan = $moment.now() - $scope.startTime;
+      return $moment(timespan).format('mm:ss');
+    }
 
     function init(){
+      $scope.clock = null;
+      $scope.tickInterval = 1000; //ms
       $scope.answer = null;
       $scope.previous = null;
       $scope.testResutls = [];
       $scope.phonetics = {};
       $scope.testNumbers = [];
       $scope.currentNumber = 0;
+      $scope.startTime = $moment.now();
+      $scope.usedTime = null;
+      $scope.countDown = $timeout(tick, $scope.tickInterval);
     }
+
 
     init();
 
@@ -50,13 +64,14 @@ angular.module('miltestApp')
 
     $scope.submit = function(){
       $scope.previous = $scope.phonetics[$scope.testNumbers[$scope.currentNumber]];
-      // $scope.previousAnswer = $scope.answer.uppercase();
-      // $scope.previousResult = isAnswerCorrect();
-      $scope.previous.answer = $scope.answer;
-      $scope.previous.correctness = $scope.answer === $scope.phonetics[$scope.testNumbers[$scope.currentNumber]].word;
+      $scope.previous.answer = $filter('uppercase')($scope.answer);
+      $scope.previous.correctness = isAnswerCorrect();
       $scope.testResutls.push($scope.previous);
       $scope.currentNumber = $scope.currentNumber + 1;
       $scope.answer = null;
+      if($scope.isFinished()){
+        $timeout.cancel($scope.countDown);
+      }
     };
 
     $scope.reset = init;

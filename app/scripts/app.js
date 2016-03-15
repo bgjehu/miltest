@@ -17,9 +17,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angular-momentjs'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $momentProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -44,4 +45,8 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+    $momentProvider
+      .asyncLoading(false)
+      .scriptUrl('//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js');
   });

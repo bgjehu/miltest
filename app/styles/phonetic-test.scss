@@ -1,6 +1,29 @@
-blockquote.success{
-  border-color: green;
+blockquote{
+  &.success{
+    border-color: green;
+  }
+  &.danger{
+    border-color: red;
+  }
 }
-blockquote.danger{
-  border-color: red;
+
+.testPanel{
+  text-align: center;
+}
+
+.panel-body{
+  span.phonetic-char{
+    font-size: 30px;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid rgb(51, 122, 183);
+  }
+}
+.question-panel{
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.question-form{
+  margin-top: 10px;
 }
