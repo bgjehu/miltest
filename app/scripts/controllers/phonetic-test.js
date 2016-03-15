@@ -46,7 +46,6 @@ angular.module('miltestApp')
     }
 
     function init(){
-      $scope.clock = null;
       $scope.tickInterval = 1000; //ms
       $scope.answer = null;
       $scope.previous = null;
@@ -78,7 +77,16 @@ angular.module('miltestApp')
       }
     };
 
-    $scope.reset = init;
+    $scope.reset = function(){
+      $scope.answer = null;
+      $scope.previous = null;
+      $scope.testResutls = [];
+      $scope.testNumbers = getTestNumbers();
+      $scope.currentNumber = 0;
+      $scope.startTime = $moment.now();
+      $scope.usedTime = null;
+      $scope.countDown = $timeout(tick, $scope.tickInterval);
+    };
 
     $http.get(phoneticJsonFile)
       .success(function(data){
