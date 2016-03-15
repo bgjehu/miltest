@@ -1,0 +1,32 @@
+<div ng-hide="isFinished()">
+  <div class="jumbotron">
+    <h2>Number {{currentNumber + 1}}</h2>
+    <h2>{{phonetics[testNumbers[currentNumber]].char}}</h2>
+    <form>
+      <input type="text" placeholder="Enter phonetic word" ng-model="answer"/>
+      <input type="submit" ng-click="submit()"/>
+    </form>
+  </div>
+  <blockquote ng-hide="previous===null" ng-class="{success:previous.correctness,danger:!previous.correctness}">
+    <h4>Previous</h4>
+    <p>{{previous.char + ': ' + previous.answer}}</p>
+    <p ng-show="!previous.correctness">Correct Answer:{{previous.word}}</p>
+  </blockquote>
+</div>
+<div ng-show="isFinished()">
+  <table class="table">
+    <thead>
+      <th>Character</th>
+      <th>Phonetic Word</th>
+      <th>Your Answer</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="testResutl in testResutls" ng-class="{'success':testResutl.correctness,'danger':!testResutl.correctness}">
+        <td>{{testResutl.char}}</td>
+        <td>{{testResutl.word}}</td>
+        <td>{{testResutl.answer}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" ng-click="reset()">Re-test</button>
+</div>
