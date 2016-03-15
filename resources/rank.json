@@ -1,0 +1,176 @@
+[
+  {
+    "rank":"PRIVATE",
+    "abbr":"PVT",
+    "address":"Private",
+    "payGrade":"E1"
+  },
+  {
+    "rank":"PRIVATE 2",
+    "abbr":"PV2",
+    "address":"Private",
+    "payGrade":"E2"
+  },
+  {
+    "rank":"PRIVATE FIRST CLASS",
+    "abbr":"PFC",
+    "address":"Private",
+    "payGrade":"E3"
+  },
+  {
+    "rank":"SPECIALIST",
+    "abbr":"SPC",
+    "address":"Specialist",
+    "payGrade":"E4"
+  },
+  {
+    "rank":"CORPORAL",
+    "abbr":"CPL",
+    "address":"Corporal",
+    "payGrade":"E4"
+  },
+  {
+    "rank":"SERGEANT",
+    "abbr":"SGT",
+    "address":"Sergeant",
+    "payGrade":"E5"
+  },
+  {
+    "rank":"STAFF SERGEANT",
+    "abbr":"SSG",
+    "address":"Sergeant",
+    "payGrade":"E6"
+  },
+  {
+    "rank":"SERGEANT FIRST CLASS",
+    "abbr":"SFC",
+    "address":"Sergeant",
+    "payGrade":"E7"
+  },
+  {
+    "rank":"MASTER SERGEANT",
+    "abbr":"MSG",
+    "address":"Sergeant",
+    "payGrade":"E8"
+  },
+  {
+    "rank":"FIRST SERGEANT",
+    "abbr":"1SG",
+    "address":"First Sergeant",
+    "payGrade":"E8"
+  },
+  {
+    "rank":"SERGEANT MAJOR",
+    "abbr":"SGM",
+    "address":"Sergeant Majo",
+    "payGrade":"E9"
+  },
+  {
+    "rank":"COMMAND SERGEANT MAJOR",
+    "abbr":"CSM",
+    "address":"Sergeant Major",
+    "payGrade":"E9"
+  },
+  {
+    "rank":"SERGEANT MAJOR OF THE ARMY",
+    "abbr":"SMA",
+    "address":"Sergeant Major",
+    "payGrade":"E9"
+  },
+  {
+    "rank":"Second Lieutenant",
+    "abbr":"2LT",
+    "address":"Lieutenant",
+    "payGrade":"O1"
+  },
+  {
+    "rank":"FIRST LIEUTENANT",
+    "abbr":"1LT",
+    "address":"Lieutenant",
+    "payGrade":"O2"
+  },
+  {
+    "rank":"CAPTAIN",
+    "abbr":"CPT",
+    "address":"Captain",
+    "payGrade":"O3"
+  },
+  {
+    "rank":"MAJOR",
+    "abbr":"MAJ",
+    "address":"Major",
+    "payGrade":"O4"
+  },
+  {
+    "rank":"LIEUTENANT COLONEL",
+    "abbr":"LTC",
+    "address":"Colonel",
+    "payGrade":"O5"
+  },
+  {
+    "rank":"COLONEL",
+    "abbr":"COL",
+    "address":"Colonel",
+    "payGrade":"O6"
+  },
+  {
+    "rank":"BRIGADIER GENERAL",
+    "abbr":"BG",
+    "address":"General",
+    "payGrade":"O7"
+  },
+  {
+    "rank":"MAJOR GENERAL",
+    "abbr":"General",
+    "address":"MG",
+    "payGrade":"O8"
+  },
+  {
+    "rank":"LIEUTENANT GENERAL",
+    "abbr":"LTG",
+    "address":"General",
+    "payGrade":"O9"
+  },
+  {
+    "rank":"GENERAL",
+    "abbr":"GEN",
+    "address":"General",
+    "payGrade":"O10"
+  },
+  {
+    "rank":"GENERAL OF THE ARMY",
+    "abbr":"GEN",
+    "address":"General",
+    "payGrade":"SPECIAL"
+  },
+  {
+    "rank":"WARRANT OFFICER 1",
+    "abbr":"WO1",
+    "address":"Mr/Ms",
+    "payGrade":"WO1"
+  },
+  {
+    "rank":"CHIEF WARRANT OFFICER 2",
+    "abbr":"CW2",
+    "address":"Mr/Ms",
+    "payGrade":"CW2"
+  },
+  {
+    "rank":"CHIEF WARRANT OFFICER 3",
+    "abbr":"CW3",
+    "address":"Mr/Ms",
+    "payGrade":"CW3"
+  },
+  {
+    "rank":"CHIEF WARRANT OFFICER 4",
+    "abbr":"CW4",
+    "address":"Mr/Ms",
+    "payGrade":"CW4"
+  },
+  {
+    "rank":"CHIEF WARRANT OFFICER 5",
+    "abbr":"CW5",
+    "address":"Mr/Ms",
+    "payGrade":"CW5"
+  }
+]
