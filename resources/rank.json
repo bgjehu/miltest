@@ -121,8 +121,8 @@
   },
   {
     "rank":"MAJOR GENERAL",
-    "abbr":"General",
-    "address":"MG",
+    "abbr":"MG",
+    "address":"General",
     "payGrade":"O8"
   },
   {
@@ -139,7 +139,7 @@
   },
   {
     "rank":"GENERAL OF THE ARMY",
-    "abbr":"GEN",
+    "abbr":"GOA",
     "address":"General",
     "payGrade":"SPECIAL"
   },
