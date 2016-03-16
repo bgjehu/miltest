@@ -1,1 +1,49 @@
-<p>This is the rankTest view.</p>
+<div ng-hide="isFinished()">
+  <div class="testPanel panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Phonetic Test</h3>
+    </div>
+    <div class="panel-body">
+      <p ng-show="usedTime" class="pull-right"><span class="glyphicon glyphicon-time"></span>{{' ' + usedTime}}</p>
+      <div class="question-panel">
+        <h5>Question {{currentNumber + 1}}</h5>
+        <img src="{{getImageSource(ranks[testNumbers[currentNumber]].abbr)}}" alt="" class="img-rounded">
+        <div class="question-form">
+          <form>
+            <input type="text" placeholder="Rank" ng-model="answer"/>
+            <span><button type="submit" class="btn btn-sm btn-default" ng-click="submit()">Enter</button></span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <blockquote ng-hide="previous===null" ng-class="{success:previous.correctness,danger:!previous.correctness}">
+    <h4>Previous</h4>
+    <p>{{'Your Answer: ' + previous.answer}}</p>
+    <p ng-show="!previous.correctness">Correct Answer:{{previous.rank}}</p>
+  </blockquote>
+</div>
+<div ng-show="isFinished()">
+  <table class="table">
+    <thead>
+      <th>Image</th>
+      <th>Rank</th>
+      <th>Abbriviation</th>
+      <th>Address</th>
+      <th>Pay Grade</th>
+      <th>Answer</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="testResutl in testResutls" ng-class="{'success':testResutl.correctness,'danger':!testResutl.correctness}">
+        <td><img src="{{getImageSource(testResutl.abbr)}}" alt="" class="img-responsive"></td>
+        <td>{{testResutl.rank}}</td>
+        <td>{{testResutl.abbr}}</td>
+        <td>{{testResutl.address}}</td>
+        <td>{{testResutl.payGrade}}</td>
+        <td>{{testResutl.answer}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="glyphicon glyphicon-time"></span>{{' ' + usedTime}}
+  <button class="btn btn-sm btn-default pull-right" ng-click="reset()">Re-test</button>
+</div>

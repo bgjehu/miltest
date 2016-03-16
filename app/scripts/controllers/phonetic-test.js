@@ -10,13 +10,13 @@
 angular.module('miltestApp')
   .controller('PhoneticTestCtrl', function ($scope, $http, $moment, $filter, $timeout, $location) {
 
-    // Returns a random integer between min (included) and max (included)
-    // Using Math.round() will give you a non-uniform distribution!
     var port = $location.port();
     var phoneticJsonFile = $location.protocol() + '://' + $location.host();
     phoneticJsonFile = port===null ? phoneticJsonFile : phoneticJsonFile + ':' + port;
     phoneticJsonFile += '/resources/phonetic.json';
 
+    // Returns a random integer between min (included) and max (included)
+    // Using Math.round() will give you a non-uniform distribution!
     function getRandomIntInclusive(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
