@@ -18,9 +18,9 @@
     </div>
   </div>
   <blockquote ng-hide="previous===null" ng-class="{success:previous.correctness,danger:!previous.correctness}">
-    <h4>Previous</h4>
-    <p>{{previous.char + ': ' + previous.answer}}</p>
-    <p ng-show="!previous.correctness">Correct Answer:{{previous.word}}</p>
+    <h4>Previous Question</h4>
+    <h5>{{previous.char + ': ' + previous.answer}}</h5>
+    <h5 ng-show="!previous.correctness">Correct Answer:{{previous.word}}</h5>
   </blockquote>
 </div>
 <div ng-show="isFinished()">

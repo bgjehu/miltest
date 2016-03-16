@@ -18,9 +18,10 @@
     </div>
   </div>
   <blockquote ng-hide="previous===null" ng-class="{success:previous.correctness,danger:!previous.correctness}">
-    <h4>Previous</h4>
-    <p>{{'Your Answer: ' + previous.answer}}</p>
-    <p ng-show="!previous.correctness">Correct Answer:{{previous.rank}}</p>
+    <h4>Previous Question</h4>
+    <img src="{{getImageSource(previous.abbr)}}" alt="" class="img-thumbnail">
+    <h5>{{'Your Answer: ' + previous.answer}}</h5>
+    <h5 ng-show="!previous.correctness">{{'Correct Answer: '+previous.rank}}</h5>
   </blockquote>
 </div>
 <div ng-show="isFinished()">
